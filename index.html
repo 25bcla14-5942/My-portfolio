@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush K Sanil | DevOps Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Floating Gradient Background */
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background:radial-gradient(circle,#3b82f6,transparent 60%);
+    top:-200px;
+    left:-200px;
+    animation:float 8s infinite alternate;
+    z-index:-1;
+}
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#9333ea,transparent 60%);
+    bottom:-200px;
+    right:-200px;
+    animation:float 10s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes float{
+    from{transform:translateY(0px);}
+    to{transform:translateY(50px);}
+}
+
+section{
+    padding:80px 10%;
+    text-align:center;
+}
+
+h1{
+    font-size:3rem;
+}
+
+h2{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+    opacity:0.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#3b82f6,#9333ea);
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* Skill Bars */
+.skill-bar{
+    width:70%;
+    margin:20px auto;
+    background:#1e293b;
+    border-radius:30px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:20px;
+    width:0;
+    background:linear-gradient(90deg,#3b82f6,#9333ea);
+    border-radius:30px;
+    transition:2s;
+}
+
+/* Tools Tags */
+.tools span{
+    display:inline-block;
+    margin:10px;
+    padding:8px 15px;
+    background:#1e293b;
+    border-radius:20px;
+    transition:0.3s;
+}
+.tools span:hover{
+    background:#3b82f6;
+}
+
+/* Typing Effect */
+.typing{
+    color:#3b82f6;
+    font-weight:600;
+    border-right:2px solid white;
+    padding-right:5px;
+}
+
+/* ================= CONTACT FORM ================= */
+
+.contact-form{
+    max-width:500px;
+    margin:30px auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    background:#1e293b;
+    color:white;
+    font-size:14px;
+}
+
+.contact-form textarea{
+    resize:none;
+    height:120px;
+}
+
+.contact-form button{
+    padding:12px;
+    border-radius:30px;
+    border:none;
+    background:linear-gradient(45deg,#3b82f6,#9333ea);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    transform:scale(1.05);
+}
+
+.success-message{
+    margin-top:15px;
+    color:#3b82f6;
+    display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<section>
+    <h1>Ayush K Sanil</h1>
+    <h2>I am a <span class="typing"></span></h2>
+    <a href="https://github.com/25bcla14-5942" target="_blank" class="btn">Visit My GitHub</a>
+</section>
+
+<section>
+    <h2>About Me</h2>
+    <p>
+        I am a BCA Cloud Computing student at Kristu Jayanti University,
+        passionate about automation, cloud infrastructure, and DevOps practices.
+        My goal is to become a skilled DevOps Engineer and work on scalable,
+        production-level systems.
+    </p>
+</section>
+
+<section>
+    <h2>Skills</h2>
+
+    <p>Python</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+
+    <p>Java</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+
+    <p>HTML & CSS</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+
+    <p>C Programming</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+
+    <p>Cloud Computing</p>
+    <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+
+</section>
+
+<section>
+    <h2>Tools & Technologies</h2>
+    <div class="tools">
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>Linux Basics</span>
+        <span>Docker (Learning)</span>
+        <span>AWS (Learning)</span>
+    </div>
+</section>
+
+<section>
+    <h2>DevOps Focus</h2>
+    <p>
+        Interested in CI/CD pipelines, infrastructure automation,
+        system reliability, and cloud-native architectures.
+    </p>
+</section>
+
+<section>
+    <h2>Career Objective</h2>
+    <p>
+        To grow into a DevOps Engineer role by mastering cloud technologies,
+        automation workflows, and infrastructure management.
+    </p>
+</section>
+
+<section>
+    <h2>Contact Me</h2>
+
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/mdalwgkg" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <div class="success-message" id="successMsg">Message sent successfully 🚀</div>
+    </form>
+
+</section>
+
+<script>
+
+// Typing Animation
+const words = ["DevOps Enthusiast", "Cloud Learner", "Automation Focused"];
+let i = 0;
+let j = 0;
+let currentWord = "";
+let isDeleting = false;
+const typingElement = document.querySelector(".typing");
+
+function type(){
+    currentWord = words[i];
+    if(isDeleting){
+        typingElement.textContent = currentWord.substring(0,j--);
+        if(j < 0){
+            isDeleting = false;
+            i = (i+1)%words.length;
+        }
+    }else{
+        typingElement.textContent = currentWord.substring(0,j++);
+        if(j > currentWord.length){
+            isDeleting = true;
+        }
+    }
+    setTimeout(type,100);
+}
+type();
+
+// Formspree Submit Handling
+const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("successMsg");
+
+form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if(response.ok){
+        successMsg.style.display = "block";
+        form.reset();
+    }
+});
+
+</script>
+
+</body>
+</html>
