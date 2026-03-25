@@ -1,4 +1,4 @@
-// Typing Animation
+// ================= TYPING ANIMATION =================
 const textArray = [
     "Future DevOps Engineer 🚀",
     "Cloud & Automation Enthusiast ☁️",
@@ -12,6 +12,8 @@ let isDeleting = false;
 
 function type() {
     const display = document.getElementById("typing");
+
+    if (!display) return;
 
     if (index >= textArray.length) index = 0;
 
@@ -37,7 +39,8 @@ function type() {
 
 type();
 
-// Reveal Animation
+
+// ================= REVEAL ANIMATION =================
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
@@ -57,7 +60,8 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// Particles
+
+// ================= PARTICLES =================
 tsParticles.load("tsparticles", {
     particles: {
         number: { value: 50 },
@@ -71,3 +75,50 @@ tsParticles.load("tsparticles", {
         size: { value: 2 }
     }
 });
+
+
+// ================= CONTACT FORM (FIXED) =================
+const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("successMsg");
+
+if (form) {
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value
+        };
+
+        try {
+            const response = await fetch("https://backend-2-v4nk.onrender.com/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            let result = {};
+
+            // ✅ Fix for "undefined error"
+            try {
+                result = await response.json();
+            } catch {
+                throw new Error("Invalid server response");
+            }
+
+            if (response.ok) {
+                successMsg.style.display = "block";
+                form.reset();
+            } else {
+                alert("Error: " + (result.message || "Something went wrong"));
+            }
+
+        } catch (error) {
+            alert("Server Error: " + error.message);
+            console.log(error);
+        }
+    });
+}
