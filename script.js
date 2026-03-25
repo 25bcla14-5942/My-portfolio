@@ -92,7 +92,7 @@ if (form) {
         };
 
         try {
-            const response = await fetch("https://backend-2-v4nk.onrender.com/api/contact", {
+            const response = await fetch("https://backend-3-m9ru.onrender.com", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
